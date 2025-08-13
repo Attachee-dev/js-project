@@ -31,3 +31,27 @@ h1 {
     font-weight: bold;
     font-size: 18px;
 }
+ .whatsapp-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+           
+        }
+ .whatsapp-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .whatsapp-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
