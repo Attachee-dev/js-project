@@ -1,57 +1,108 @@
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     text-align: center;
-    background: #f4f4f4;
+    background: linear-gradient(135deg, #667eea, #764ba2);
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+/* Title */
+h1 {
+    margin: 20px 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Scoreboard */
+.scoreboard {
+    display: flex;
+    gap: 40px;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Choices (buttons) */
+.choices {
+    margin: 30px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-h1 {
-    color: #333;
-}
-
-.scoreboard {
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
 .choices button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
     cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
-#result {
-    margin-top: 20px;
-    font-weight: bold;
-    font-size: 18px;
+.choices button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
- .whatsapp-button {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 50px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-           
-        }
- .whatsapp-icon {
-            width: 24px;
-            height: 24px;
-        }
-        .whatsapp-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
+
+.choices button:active {
+    transform: scale(0.95);
+}
+
+/* Result Text */
+#result {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    min-height: 40px;
+}
+
+/* Animated result feedback */
+#result.flash {
+    animation: flash 0.8s ease;
+}
+
+@keyframes flash {
+    0% { text-shadow: 0 0 15px yellow; transform: scale(1.1); }
+    100% { text-shadow: none; transform: scale(1); }
+}
+
+/* WhatsApp Button */
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    margin-top: 40px;
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}

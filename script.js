@@ -38,6 +38,12 @@ function playRound(humanChoice) {
     if (roundsPlayed === 5) {
         declareWinner();
     }
+    const resultEl = document.getElementById("result");
+resultEl.textContent = result;
+resultEl.classList.add("flash");
+
+// remove animation class after it plays
+setTimeout(() => resultEl.classList.remove("flash"), 800);
 }
 
 // Function to declare final winner after 5 rounds
